@@ -13,7 +13,8 @@ class CategoryController extends Controller
      */
     public function index()
     {
-        //
+        $categories=Category::All();
+        return response()->json($categories);
     }
 
     /**
@@ -45,6 +46,11 @@ class CategoryController extends Controller
      */
     public function destroy(Category $category)
     {
-        //
     }
+    public function deleteAllCategories()
+    {
+        Category::query()->delete();
+        return response()->json('All categories deleted successfully');
+    }
+    
 }

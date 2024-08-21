@@ -13,7 +13,7 @@ Route::apiResource('users', UserController::class);
 Route::apiResource('orders', OrderController::class);
 
 //________________category routes____________________
+Route::delete('/categories/deleteAll', [CategoryController::class, 'deleteAllCategories']);
 Route::apiResource('categories', CategoryController::class);
-
 //________________product routes____________________
 Route::apiResource('products', ProductController::class);
