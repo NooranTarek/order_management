@@ -8,17 +8,22 @@ use Illuminate\Database\Eloquent\Model;
 class Product extends Model
 {
     use HasFactory;
+    protected $fillable = [
+        'title,',
+        'category_id',
+        'price',
+        'description',
+        'image',
+        'code'
+    ];
 
-
-
-
-
-//product can exist in many orders
+    //product can exist in many orders
     public function orders()
     {
     return $this->belongsToMany(Order::class)->withPivot('quantity');
     }
-//one product belong to one category
+    
+    //one product belong to one category
     public function category()
     {
     return $this->belongsTo(Category::class);
