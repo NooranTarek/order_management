@@ -9,20 +9,13 @@ class Product extends Model
 {
     use HasFactory;
     protected $fillable = [
-        'title,',
+        'title',
         'category_id',
         'price',
         'description',
         'image',
         'code'
-    ];
-
-    //product can exist in many orders
-    public function orders()
-    {
-    return $this->belongsToMany(Order::class)->withPivot('quantity');
-    }
-    
+    ]; 
     //one product belong to one category
     public function category()
     {

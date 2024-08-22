@@ -8,10 +8,6 @@ use App\Http\Controllers\Api\CategoryController;
 use App\Http\Controllers\Api\ProductController;
 //________________user routes____________________
 Route::apiResource('users', UserController::class);
-
-//________________order routes____________________
-Route::apiResource('orders', OrderController::class);
-
 //________________category routes____________________
 Route::delete('/categories/deleteAll', [CategoryController::class, 'deleteAllCategories']);
 Route::apiResource('categories', CategoryController::class);
