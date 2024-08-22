@@ -14,7 +14,10 @@ class CategoryController extends Controller
     public function index()
     {
         $categories=Category::All();
-        return response()->json($categories);
+        return response()->json([
+            'message'=>'all categories showed successfully',
+            'categories'=>$categories
+        ]);
     }
 
     /**
@@ -31,30 +34,61 @@ class CategoryController extends Controller
             return response()->json(['errors'=>$validator->errors()],422);
         }
         $category=Category::create($validator->validated());
-        return response()->json($category,201);
-    }
+        return response()->json([
+            'message' => 'Category addedd successfully',
+            'category' => $category,
+        ]);
+        } 
 
     /**
      * Display the specified resource.
      */
-    public function show(Category $category)
+    public function show($id)
     {
-        //
+        $category = Category::find($id);
+    
+        if (!$category) {
+            return response()->json(['message' => 'Category not found'], 404);
+        }
+    
+        return response()->json($category);
     }
-
+    
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Category $category)
+    public function update(Request $request, $id)
     {
-        //
+       $validator = Validator::make($request->all(), [
+        'name' => 'string|max:255',
+        'description' => 'nullable|string',
+    ]);
+
+    if ($validator->fails()) {
+        return response()->json(['errors' => $validator->errors()], 422);
+    }
+    $category=Category::find($id);
+    if (!$category){
+        return response()->json(['message'=>'category not found to update']);
+    }
+    $category->update($validator->validated());
+    return response()->json([
+        'message' => 'Category updated successfully',
+        'category' => $category,
+    ]);
     }
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Category $category)
+    public function destroy($id)
     {
+        $category = Category::find($id);
+        if (!$category){
+            return response()->json(['message'=>'category not found to delete']);
+        }
+        $category->delete();
+        return response()->json(['message' => 'Category deleted successfully']);
     }
     public function deleteAllCategories()
     {
