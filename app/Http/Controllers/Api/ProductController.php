@@ -64,18 +64,58 @@ class ProductController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Product $product)
+    public function show($id)
     {
-        //
+        $product=Product::find($id);
+        if (!$product){
+            return response()->json(['message'=>'Product not found'],404);
+        }
+        return response()->json($product);
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Product $product)
+    public function update(Request $request, $id)
     {
-        //
+        $validator = Validator::make($request->all(), [
+            'title' => 'string|max:255',
+            'description' => 'nullable|string',
+            'price' => 'numeric',
+            'image' => 'nullable|image|mimes:jpg,jpeg,png', // Image is optional
+            'code' => 'string',
+            'category_id' => 'integer',
+        ]);
+    
+        if ($validator->fails()) {
+            return response()->json(['errors' => $validator->errors()], 422);
+        }
+    
+        $product = Product::find($id);
+        if (!$product) {
+            return response()->json(['message' => 'Product not found'], 404);
+        }
+        $imageUrl = $product->image;
+            if ($request->hasFile('image')) {
+            try {
+                $uploadedFile = cloudinary()->upload($request->file('image')->getRealPath());
+                $imageUrl = $uploadedFile->getSecurePath();
+            } catch (\Exception $e) {
+                return response()->json(['error' => 'Image upload failed: ' . $e->getMessage()], 500);
+            }
+        }
+    
+        $updateData = $request->only(['title', 'description', 'price', 'code', 'category_id']);
+        $updateData['image'] = $imageUrl;
+   
+        $product->update($updateData);
+    
+        return response()->json([
+            'message' => 'Product updated successfully',
+            'product' => $product,
+        ]);
     }
+    
 
     /**
      * Remove the specified resource from storage.
