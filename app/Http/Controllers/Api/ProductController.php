@@ -14,11 +14,12 @@ class ProductController extends Controller
      */
     public function index()
     {
-        $products=Product::All();
+        $products = Product::with('category')->get();
         return response()->json([
-            'message'=>'all products showed successfully',
-            'products'=>$products
-        ]);    }
+            'message' => 'All products retrieved successfully',
+            'products' => $products
+        ]);  
+    }
 
     /**
      * Store a newly created resource in storage.
