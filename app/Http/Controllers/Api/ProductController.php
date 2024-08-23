@@ -141,7 +141,7 @@ class ProductController extends Controller
              ->where('title', 'LIKE', '%' . $searchQuery . '%') 
              ->get(); 
          return response()->json([
-             'message' => 'Products retrieved successfully',
+             'message' => 'products retrieved successfully',
              'products' => $products,
          ]);
      }
