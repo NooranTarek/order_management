@@ -2,9 +2,9 @@
 
 <p align="center">
     <img src="https://img.shields.io/badge/Laravel-10.x-red?style=flat-square">
-    <img src="https://img.shields.io/badge/PHP-%3E=8.1-blue?style=flat-square">
-    <img src="https://img.shields.io/badge/Composer-%3E=2.0-green?style=flat-square">
-    <img src="https://img.shields.io/badge/MySQL-%3E=5.7-blue?style=flat-square">
+    <img src="https://img.shields.io/badge/PHP-8.1-blue?style=flat-square">
+    <img src="https://img.shields.io/badge/Composer-2.0-green?style=flat-square">
+    <img src="https://img.shields.io/badge/MySQL-5.7-blue?style=flat-square">
 </p>
 
 <h2 style="color: #2c3e50;">📄 Project Description</h2>
@@ -19,11 +19,11 @@
 
 <h2 style="color: #2c3e50;">🚀 Prerequisites</h2>
 <ul>
-    <li><strong>PHP</strong> version >= 8.2</li>
-    <li><strong>Composer</strong> version >= 2.0</li>
-    <li><strong>Node.js</strong> version >= 16.x (if using npm)</li>
-    <li><strong>Laravel</strong> version >= 11.9</li>
-    <li><strong>MySQL</strong> version >= 5.7 </li>
+    <li><strong>PHP</strong> version => 8.2</li>
+    <li><strong>Composer</strong> version => 2.0</li>
+    <li><strong>Node.js</strong> version => 16.x (if using npm)</li>
+    <li><strong>Laravel</strong> version => 11.9</li>
+    <li><strong>MySQL</strong> version => 5.7 </li>
 </ul>
 
 <h2 style="color: #2c3e50;">⚙️ Installation Instructions</h2>
