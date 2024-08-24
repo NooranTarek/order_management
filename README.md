@@ -21,7 +21,6 @@
 <ul>
     <li><strong>PHP</strong> version => 8.2</li>
     <li><strong>Composer</strong> version => 2.0</li>
-    <li><strong>Node.js</strong> version => 16.x (if using npm)</li>
     <li><strong>Laravel</strong> version => 11.9</li>
     <li><strong>MySQL</strong> version => 5.7 </li>
 </ul>
@@ -45,6 +44,13 @@ DB_PORT=3306
 DB_DATABASE=your_database_name
 DB_USERNAME=your_database_username
 DB_PASSWORD=your_database_password</pre>
+    </li>
+<li><strong>Configure Cloudinary:</strong>
+        <pre style="background: #f4f4f4; padding: 10px; border-radius: 5px;">CLOUDINARY_URL=
+CLOUDINARY_CLOUD_NAME=
+CLOUDINARY_API_KEY=
+CLOUDINARY_API_SECRET=
+CLOUDINARY_SECURE_URL=true</pre>
     </li>
     <li><strong>Run Migrations:</strong>
         <pre style="background: #f4f4f4; padding: 10px; border-radius: 5px;">php artisan migrate</pre>
