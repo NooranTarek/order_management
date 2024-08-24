@@ -34,8 +34,8 @@ cd product_management_Laravel</pre>
     <li><strong>Install Dependencies:</strong>
         <pre style="background: #f4f4f4; padding: 10px; border-radius: 5px;">composer install</pre>
     </li>
-    <li><strong>Copy .env file:</strong>
-        <pre style="background: #f4f4f4; padding: 10px; border-radius: 5px;">cp .env.example .env</pre>
+    <li><strong>.env file:</strong>
+        <pre style="background: #f4f4f4; padding: 10px; border-radius: 5px;">add .env file to set configrations</pre>
     </li>
     <li><strong>Configure Database:</strong>
         <pre style="background: #f4f4f4; padding: 10px; border-radius: 5px;">DB_CONNECTION=mysql
