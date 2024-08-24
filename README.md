@@ -30,7 +30,7 @@
 <ol>
     <li><strong>Clone the Repository:</strong>
         <pre style="background: #f4f4f4; padding: 10px; border-radius: 5px;">git clone git@github.com:NooranTarek/product_management_Laravel.git
-cd your-repo-name</pre>
+cd product_management_Laravel</pre>
     </li>
     <li><strong>Install Dependencies:</strong>
         <pre style="background: #f4f4f4; padding: 10px; border-radius: 5px;">composer install</pre>
