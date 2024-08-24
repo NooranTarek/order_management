@@ -72,7 +72,7 @@ CLOUDINARY_SECURE_URL=true</pre>
 
 
 <footer style="text-align: center; padding-top: 20px;">
-    <p style="color: #95a5a6;">Made with ❤️ by <a href="https://github.com/username" style="color: #3498db; text-decoration: none;">Nouran Tarek</a></p>
+    <p style="color: #95a5a6;">Made with ❤️ by <a href="https://github.com/NooranTarek" style="color: #3498db; text-decoration: none;">NooranTarek</a></p>
 </footer>
 
 
